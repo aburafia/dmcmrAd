@@ -22,6 +22,7 @@
 		42D94CA01940B2D3003A32AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C7F1940B2D3003A32AB /* UIKit.framework */; };
 		42D94CA81940B2D3003A32AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D94CA61940B2D3003A32AB /* InfoPlist.strings */; };
 		42D94CAA1940B2D3003A32AB /* dmcmrAdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D94CA91940B2D3003A32AB /* dmcmrAdTests.m */; };
+		42D94CB41940B3A5003A32AB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94CB31940B3A5003A32AB /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		42D94CA51940B2D3003A32AB /* dmcmrAdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dmcmrAdTests-Info.plist"; sourceTree = "<group>"; };
 		42D94CA71940B2D3003A32AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42D94CA91940B2D3003A32AB /* dmcmrAdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmcmrAdTests.m; sourceTree = "<group>"; };
+		42D94CB31940B3A5003A32AB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D94CB41940B3A5003A32AB /* CoreBluetooth.framework in Frameworks */,
 				42D94C7E1940B2D3003A32AB /* CoreGraphics.framework in Frameworks */,
 				42D94C801940B2D3003A32AB /* UIKit.framework in Frameworks */,
 				42D94C7C1940B2D3003A32AB /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		42D94C7A1940B2D3003A32AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42D94CB31940B3A5003A32AB /* CoreBluetooth.framework */,
 				42D94C7B1940B2D3003A32AB /* Foundation.framework */,
 				42D94C7D1940B2D3003A32AB /* CoreGraphics.framework */,
 				42D94C7F1940B2D3003A32AB /* UIKit.framework */,
