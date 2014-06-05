@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface hanaAppDelegate : UIResponder <UIApplicationDelegate>
+@interface hanaAppDelegate : UIResponder <UIApplicationDelegate,
+CBCentralManagerDelegate,CBPeripheralDelegate>{
+    CBCentralManager *manager;
+    CBPeripheral *_peripheral;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
