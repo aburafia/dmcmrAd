@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42A7B2371AB4610600850638 /* BleCentral.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7B2361AB4610600850638 /* BleCentral.m */; };
 		42D94C7C1940B2D3003A32AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C7B1940B2D3003A32AB /* Foundation.framework */; };
 		42D94C7E1940B2D3003A32AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C7D1940B2D3003A32AB /* CoreGraphics.framework */; };
 		42D94C801940B2D3003A32AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C7F1940B2D3003A32AB /* UIKit.framework */; };
@@ -15,7 +16,7 @@
 		42D94C8C1940B2D3003A32AB /* hanaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D94C8B1940B2D3003A32AB /* hanaAppDelegate.m */; };
 		42D94C8F1940B2D3003A32AB /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D94C8D1940B2D3003A32AB /* Main_iPhone.storyboard */; };
 		42D94C921940B2D3003A32AB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D94C901940B2D3003A32AB /* Main_iPad.storyboard */; };
-		42D94C951940B2D3003A32AB /* hanaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D94C941940B2D3003A32AB /* hanaViewController.m */; };
+		42D94C951940B2D3003A32AB /* AdshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D94C941940B2D3003A32AB /* AdshowViewController.m */; };
 		42D94C971940B2D3003A32AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D94C961940B2D3003A32AB /* Images.xcassets */; };
 		42D94C9E1940B2D3003A32AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C9D1940B2D3003A32AB /* XCTest.framework */; };
 		42D94C9F1940B2D3003A32AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D94C7B1940B2D3003A32AB /* Foundation.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42A7B2351AB4610600850638 /* BleCentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleCentral.h; sourceTree = "<group>"; };
+		42A7B2361AB4610600850638 /* BleCentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleCentral.m; sourceTree = "<group>"; };
 		42D94C781940B2D3003A32AB /* dmcmrAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmcmrAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D94C7B1940B2D3003A32AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42D94C7D1940B2D3003A32AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +51,8 @@
 		42D94C8B1940B2D3003A32AB /* hanaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hanaAppDelegate.m; sourceTree = "<group>"; };
 		42D94C8E1940B2D3003A32AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		42D94C911940B2D3003A32AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		42D94C931940B2D3003A32AB /* hanaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hanaViewController.h; sourceTree = "<group>"; };
-		42D94C941940B2D3003A32AB /* hanaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hanaViewController.m; sourceTree = "<group>"; };
+		42D94C931940B2D3003A32AB /* AdshowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdshowViewController.h; sourceTree = "<group>"; };
+		42D94C941940B2D3003A32AB /* AdshowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdshowViewController.m; sourceTree = "<group>"; };
 		42D94C961940B2D3003A32AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42D94C9C1940B2D3003A32AB /* dmcmrAdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dmcmrAdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D94C9D1940B2D3003A32AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -84,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42A7B2341AB460D600850638 /* ble */ = {
+			isa = PBXGroup;
+			children = (
+				42A7B2351AB4610600850638 /* BleCentral.h */,
+				42A7B2361AB4610600850638 /* BleCentral.m */,
+			);
+			name = ble;
+			sourceTree = "<group>";
+		};
 		42D94C6F1940B2D3003A32AB = {
 			isa = PBXGroup;
 			children = (
@@ -118,12 +130,13 @@
 		42D94C811940B2D3003A32AB /* dmcmrAd */ = {
 			isa = PBXGroup;
 			children = (
+				42A7B2341AB460D600850638 /* ble */,
 				42D94C8A1940B2D3003A32AB /* hanaAppDelegate.h */,
 				42D94C8B1940B2D3003A32AB /* hanaAppDelegate.m */,
 				42D94C8D1940B2D3003A32AB /* Main_iPhone.storyboard */,
 				42D94C901940B2D3003A32AB /* Main_iPad.storyboard */,
-				42D94C931940B2D3003A32AB /* hanaViewController.h */,
-				42D94C941940B2D3003A32AB /* hanaViewController.m */,
+				42D94C931940B2D3003A32AB /* AdshowViewController.h */,
+				42D94C941940B2D3003A32AB /* AdshowViewController.m */,
 				42D94C961940B2D3003A32AB /* Images.xcassets */,
 				42D94C821940B2D3003A32AB /* Supporting Files */,
 			);
@@ -207,6 +220,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = hanahana;
 				TargetAttributes = {
+					42D94C771940B2D3003A32AB = {
+						DevelopmentTeam = E6M8QXW46T;
+					};
 					42D94C9B1940B2D3003A32AB = {
 						TestTargetID = 42D94C771940B2D3003A32AB;
 					};
@@ -258,9 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D94C951940B2D3003A32AB /* hanaViewController.m in Sources */,
+				42D94C951940B2D3003A32AB /* AdshowViewController.m in Sources */,
 				42D94C8C1940B2D3003A32AB /* hanaAppDelegate.m in Sources */,
 				42D94C881940B2D3003A32AB /* main.m in Sources */,
+				42A7B2371AB4610600850638 /* BleCentral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +492,7 @@
 				42D94CAF1940B2D3003A32AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42D94CB01940B2D3003A32AB /* Build configuration list for PBXNativeTarget "dmcmrAdTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +501,7 @@
 				42D94CB21940B2D3003A32AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
