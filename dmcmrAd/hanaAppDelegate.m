@@ -5,11 +5,14 @@
 //  Created by ryu on 2014/06/05.
 //  Copyright (c) 2014年 hanahana. All rights reserved.
 //
+//
+//  このアプリはBLEのセントルラルとして動きます。
+//  アドバタイズを行い、一番最初にみつけたレシーバーの情報をもとに、所有者の情報を取得
+//  所有者IDを付与してwebviewの表示を行います。
+//
 
 #import "hanaAppDelegate.h"
 
-#define SERVICE_UUID @"48596A53-8DF0-4BEE-A4DD-8CB2DFBC4D20"
-#define CHARACTERISTIC_UUID @"2B6B1035-28B8-4BD4-ACB2-538D350E9DFF"
 
 
 @implementation hanaAppDelegate
@@ -17,88 +20,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    _ble = [[BleCentral alloc] init:^(NSString* uuid){
+        [self onComplete:uuid];
+    }];
+    
     
     // Override point for customization after application launch.
     return YES;
 }
 
 
-//CBCentralManagerのステータスが更新されるとコールされる
--(void)centralManagerDidUpdateState:(CBCentralManager *)central
-{
-    NSLog(@"State Updated");
-    if(central.state == CBCentralManagerStatePoweredOn) {
-        NSLog(@"ready");
-        
-        //BLEを有効にする
-        [self activeBLE];
-    }
-}
-
-
-
--(void)activeBLE{
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:SERVICE_UUID];
-    [manager scanForPeripheralsWithServices:@[serviceUUID] options:nil];
-}
-
-
-
-//ペリファレルを発見するとコールされる
--(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral
-    advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
-{
-    NSLog(@"Peripheral discoverd :%@",advertisementData);
-    //スキャンを停止し、ペリファレルに接続する
-    _peripheral = peripheral;
-    [manager stopScan];
-    [manager connectPeripheral:peripheral options:nil];
-}
-
-//ペリファレルに接続すると、コールされる
--(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
-{
-    NSLog(@"Connected to peripherel");
-    //サービスを検索する
-    _peripheral.delegate = self;
-    [_peripheral discoverServices:@[[CBUUID UUIDWithString:SERVICE_UUID]]];
-}
-
-//ペリファレルのサービスを発見するとコールされる
--(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
-{
-    NSLog(@"Services discovered");
-    for (CBService *service in peripheral.services) {
-        NSLog(@"Service :%@",service);
-        [_peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:CHARACTERISTIC_UUID]]
-                                  forService:service];
-    }
-}
-
-//サービスのキャラクタリスティックを発見するとコールされる
--(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
-{
-    for (CBCharacteristic *characteristic in service.characteristics) {
-        NSLog(@"Discovered characteristic:%@",characteristic.UUID);
-        [_peripheral readValueForCharacteristic:characteristic];
-    }
-}
-
-//キャラクタリスティックの値を取得するとコールされる
--(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
-{
-    NSData *data = characteristic.value;
-    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"data = %@",result);
+-(void)onComplete:(NSString*)uuid{
     
-    [manager cancelPeripheralConnection:_peripheral];
+    NSLog(@"読み込みました uuid=%@",uuid);
+    
+    // 通知先に渡すデータをセット
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                            uuid, @"uuid",
+                              nil];
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    // 通知する
+    [nc postNotificationName:@"Connect" object:self userInfo:userInfo];
 }
-
-
-
-
-
 
 
 

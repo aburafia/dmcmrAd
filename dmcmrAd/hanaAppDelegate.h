@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "BleCentral.h"
 
-@interface hanaAppDelegate : UIResponder <UIApplicationDelegate,
-CBCentralManagerDelegate,CBPeripheralDelegate>{
-    CBCentralManager *manager;
-    CBPeripheral *_peripheral;
-}
+@interface hanaAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) BleCentral* ble;
 
 @end
